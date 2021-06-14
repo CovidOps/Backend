@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core.views.version import VersionView
-from core.urls import community
+from core.urls import community, patient, version
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
-    path('version', VersionView.as_view(), name='test'),
+    path('version/', include(version)),
     path('communityPost/', include(community)),
+    path('patient/', include(patient)),
 ]
