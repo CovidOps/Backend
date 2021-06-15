@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from core.views.version import VersionView
-from core.urls import community, patient, version
+from core.urls import community, patient, version, prediction
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('version/', include(version)),
     path('communityPost/', include(community)),
     path('patient/', include(patient)),
+    path('prediction/', include(prediction))
 ]
