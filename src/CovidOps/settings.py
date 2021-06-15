@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from pymongo.mongo_client import MongoClient
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -91,10 +92,12 @@ DATABASES = {
 DATABASES = {
        'default': {
            'ENGINE': 'djongo',
-           'NAME': 'myFirstDatabase',
+           'NAME': 'CovidOps',
+           #'HOST': "mongodb+srv://dbUser:PjP4BTcHbivPbgG@cluster0.ifres.mongodb.net/CovidOps?retryWrites=true&w=majority"
        }
    }
 
+MongoClient.HOST = "mongodb+srv://dbUser:PjP4BTcHbivPbgG@cluster0.ifres.mongodb.net/"
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
