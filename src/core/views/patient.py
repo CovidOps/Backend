@@ -46,7 +46,8 @@ class PatientSignUpView(APIView):
             serializer.save()
             resp = {
                 'code': 200,
-                'message':'Signed up successfully'
+                'message':'Signed up successfully',
+                'id': serializer.data["_id"]
             }
             return Response(resp)
         

@@ -14,6 +14,7 @@ class CommunityPostCreateView(APIView):
         #console.log(request.data)
         coordinates = request.data['coordinates']
         postdata = request.data
+        postdata["person_id"] = postdata["personId"]
         postdata["type"] = type
         postdata['location'] = {'coordinates':coordinates}
         serializer = CommunityPostSerializer(data=postdata)
